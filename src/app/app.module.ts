@@ -1,18 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, Injector} from '@angular/core';
 
-import { AppComponent } from './app.component';
+//import { AppComponent } from './app.component';
 import { MessageComponent } from './message/message.component';
+import {FormsModule} from "@angular/forms";
+import {createCustomElement} from  '@angular/elements';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    //AppComponent,
+    MessageComponent
+  ],
+  entryComponents:[ //component dinamico
     MessageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  //bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector){
+    const customElement = createCustomElement(MessageComponent, {injector});
+    customElements.define('my-message', customElement);
+  }
+
+  ngDoBootstrap(){}
+}
