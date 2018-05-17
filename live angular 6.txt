@@ -1,0 +1,43 @@
+#instalando angular
+npm install -g @angular/cli
+
+#criando app
+ng new testangular6
+
+#Run App
+ng server
+
+#gerando component
+ng g component message
+
+#adicionar pacotes - pacote que é novo conceito para criar elementos personalizados que podem ser reutilizado em outras app que não são do angular
+
+ng add @angular/elements 
+#equivale npm install @angular/elements
+#corrigindo erro do "define" -> 
+
+#ng build --prod gerar para produção gera pasta dist para jogar em produção
+
+#incluir bootstrap
+npm install bootstrap --save
+
+#criação de serviço
+ng g service my-service
+
+
+#Ivy Rendered - Template Engine - Pacote para otimizar todos os templates dos componentes, são renderizados mais rapidos
+#Basel forma de melhorar a compilação 
+#angular elements - pode rodar junto com outra coisa(vue.js)
+#melhoria no angular tree
+#angular material - permite dizer ao angular para chegar na aplicação e criar uma área de grid.
+#suporte para type script v. 2.7
+
+
+
+
+
+
+
+
+
+
